@@ -1,0 +1,228 @@
+  [4;36;1mSQL (0.000169)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.009083)[0m   [0mCREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000255)[0m   [0;1mINSERT INTO `schema_info` (version) VALUES(0)[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000156)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.000000)[0m   [0mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;36;1mSQL (0.000000)[0m   [0;1mMysql::Error: Table 'schema_info' already exists: CREATE TABLE `schema_info` (version int(11))[0m
+  [4;35;1mSQL (0.000318)[0m   [0mSELECT version FROM schema_info[0m
+Migrating to AddEntriesTable (1)
+  [4;36;1mSQL (0.062047)[0m   [0;1mCREATE TABLE `entries` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `title` varchar(255) DEFAULT NULL, `content` text DEFAULT NULL, `created_at` datetime DEFAULT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.000208)[0m   [0mUPDATE schema_info SET version = 1[0m
+  [4;36;1mSQL (0.000212)[0m   [0;1mSELECT * FROM schema_info[0m
+  [4;35;1mSQL (0.000206)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.000610)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mSQL (0.000473)[0m   [0mdescribe `entries`[0m
+  [4;36;1mSQL (0.000265)[0m   [0;1mSHOW KEYS FROM `entries`[0m
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 11:32:48) [GET]
+  Session ID: e794f42c79049d71f2b6ab7c3ba0da7a
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;36;1mSQL (0.000202)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mEntry Load (0.000467)[0m   [0mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+Completed in 0.01991 (50 reqs/sec) | Rendering: 0.00642 (32%) | DB: 0.00067 (3%) | 200 OK [http://0.0.0.0/entries]
+
+
+Processing EntriesController#new (for 127.0.0.1 at 2008-05-09 11:40:57) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--510efb5119878cf612e5bdf2f4a625759c68eda1
+  Parameters: {"action"=>"new", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.000944)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+Rendering template within layouts/entries
+Rendering entries/new
+Completed in 0.01886 (53 reqs/sec) | Rendering: 0.00574 (30%) | DB: 0.00094 (5%) | 200 OK [http://0.0.0.0/entries/new]
+
+
+Processing EntriesController#create (for 127.0.0.1 at 2008-05-09 11:41:12) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64ca269e0407fa0b61ac563e8ad32ad632b7d394", "action"=>"create", "controller"=>"entries"}
+  [4;35;1mEntry Columns (0.000877)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mSQL (0.000108)[0m   [0;1mBEGIN[0m
+  [4;35;1mEntry Create (0.000417)[0m   [0mINSERT INTO `entries` (`title`, `content`, `created_at`) VALUES(NULL, NULL, '2008-05-09 11:41:12')[0m
+  [4;36;1mSQL (0.003233)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/entries/1
+Completed in 0.02188 (45 reqs/sec) | DB: 0.00463 (21%) | 302 Found [http://0.0.0.0/entries]
+
+
+Processing EntriesController#show (for 127.0.0.1 at 2008-05-09 11:41:12) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRFbnRyeSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--b1c6a87abafadcf93714d243d852019e8d33d729
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"entries"}
+  [4;35;1mEntry Columns (0.000671)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mEntry Load (0.000246)[0m   [0;1mSELECT * FROM `entries` WHERE (`entries`.`id` = 1) [0m
+Rendering template within layouts/entries
+Rendering entries/show
+Completed in 0.07117 (14 reqs/sec) | Rendering: 0.00257 (3%) | DB: 0.00092 (1%) | 200 OK [http://0.0.0.0/entries/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 11:41:15) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;35;1mEntry Load (0.000366)[0m   [0mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+  [4;36;1mEntry Columns (0.000841)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+Completed in 0.01780 (56 reqs/sec) | Rendering: 0.00435 (24%) | DB: 0.00121 (6%) | 200 OK [http://0.0.0.0/entries]
+
+
+Processing EntriesController#show (for 127.0.0.1 at 2008-05-09 11:41:17) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"show", "id"=>"1", "controller"=>"entries"}
+  [4;35;1mEntry Columns (0.000742)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mEntry Load (0.000085)[0m   [0;1mSELECT * FROM `entries` WHERE (`entries`.`id` = 1) [0m
+Rendering template within layouts/entries
+Rendering entries/show
+Completed in 0.01185 (84 reqs/sec) | Rendering: 0.00187 (15%) | DB: 0.00083 (6%) | 200 OK [http://0.0.0.0/entries/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 11:41:19) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;35;1mEntry Load (0.000176)[0m   [0mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+  [4;36;1mEntry Columns (0.000867)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+Completed in 0.01878 (53 reqs/sec) | Rendering: 0.00438 (23%) | DB: 0.00104 (5%) | 200 OK [http://0.0.0.0/entries]
+
+
+Processing EntriesController#new (for 127.0.0.1 at 2008-05-09 11:41:22) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"new", "controller"=>"entries"}
+  [4;35;1mEntry Columns (0.000911)[0m   [0mSHOW FIELDS FROM `entries`[0m
+Rendering template within layouts/entries
+Rendering entries/new
+Completed in 0.01679 (59 reqs/sec) | Rendering: 0.00395 (23%) | DB: 0.00091 (5%) | 200 OK [http://0.0.0.0/entries/new]
+
+
+Processing EntriesController#create (for 127.0.0.1 at 2008-05-09 11:44:18) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64ca269e0407fa0b61ac563e8ad32ad632b7d394", "action"=>"create", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.001106)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mSQL (0.000132)[0m   [0mBEGIN[0m
+  [4;36;1mEntry Create (0.000324)[0m   [0;1mINSERT INTO `entries` (`title`, `content`, `created_at`) VALUES(NULL, NULL, '2008-05-09 11:44:18')[0m
+  [4;35;1mSQL (0.002489)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/entries/2
+Completed in 0.02228 (44 reqs/sec) | DB: 0.00405 (18%) | 302 Found [http://0.0.0.0/entries]
+
+
+Processing EntriesController#show (for 127.0.0.1 at 2008-05-09 11:44:18) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRFbnRyeSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--b1c6a87abafadcf93714d243d852019e8d33d729
+  Parameters: {"action"=>"show", "id"=>"2", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.000740)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mEntry Load (0.000243)[0m   [0mSELECT * FROM `entries` WHERE (`entries`.`id` = 2) [0m
+Rendering template within layouts/entries
+Rendering entries/show
+Completed in 0.01259 (79 reqs/sec) | Rendering: 0.00190 (15%) | DB: 0.00098 (7%) | 200 OK [http://0.0.0.0/entries/2]
+
+
+Processing EntriesController#create (for 127.0.0.1 at 2008-05-09 12:28:38) [POST]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"64ca269e0407fa0b61ac563e8ad32ad632b7d394", "action"=>"create", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.000661)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mSQL (0.000099)[0m   [0mBEGIN[0m
+  [4;36;1mEntry Create (0.000235)[0m   [0;1mINSERT INTO `entries` (`title`, `content`, `created_at`) VALUES(NULL, NULL, '2008-05-09 12:28:38')[0m
+  [4;35;1mSQL (0.003191)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/entries/3
+Completed in 0.01610 (62 reqs/sec) | DB: 0.00419 (26%) | 302 Found [http://0.0.0.0/entries]
+
+
+Processing EntriesController#show (for 127.0.0.1 at 2008-05-09 12:28:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7BjoLbm90aWNlIiRFbnRyeSB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQu%0ABjoKQHVzZWR7BjsHVA%3D%3D--b1c6a87abafadcf93714d243d852019e8d33d729
+  Parameters: {"action"=>"show", "id"=>"3", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.001263)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mEntry Load (0.000255)[0m   [0mSELECT * FROM `entries` WHERE (`entries`.`id` = 3) [0m
+Rendering template within layouts/entries
+Rendering entries/show
+Completed in 0.01339 (74 reqs/sec) | Rendering: 0.00188 (14%) | DB: 0.00152 (11%) | 200 OK [http://0.0.0.0/entries/3]
+
+
+Processing EntriesController#edit (for 127.0.0.1 at 2008-05-09 12:28:40) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"edit", "id"=>"3", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.000674)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mEntry Load (0.000101)[0m   [0mSELECT * FROM `entries` WHERE (`entries`.`id` = 3) [0m
+Rendering template within layouts/entries
+Rendering entries/edit
+Completed in 0.01239 (80 reqs/sec) | Rendering: 0.00373 (30%) | DB: 0.00078 (6%) | 200 OK [http://0.0.0.0/entries/3/edit]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 12:28:41) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;36;1mEntry Load (0.000351)[0m   [0;1mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+  [4;35;1mEntry Columns (0.000815)[0m   [0mSHOW FIELDS FROM `entries`[0m
+Completed in 0.01848 (54 reqs/sec) | Rendering: 0.00508 (27%) | DB: 0.00117 (6%) | 200 OK [http://0.0.0.0/entries]
+
+
+Processing EntriesController#destroy (for 127.0.0.1 at 2008-05-09 12:28:45) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"authenticity_token"=>"64ca269e0407fa0b61ac563e8ad32ad632b7d394", "_method"=>"delete", "action"=>"destroy", "id"=>"1", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.001619)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mEntry Load (0.000578)[0m   [0mSELECT * FROM `entries` WHERE (`entries`.`id` = 1) [0m
+  [4;36;1mSQL (0.000145)[0m   [0;1mBEGIN[0m
+  [4;35;1mEntry Destroy (0.000970)[0m   [0m DELETE FROM `entries`
+ WHERE `id` = 1
+[0m
+  [4;36;1mSQL (0.005453)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/entries
+Completed in 0.02940 (34 reqs/sec) | DB: 0.00876 (29%) | 302 Found [http://0.0.0.0/entries/1]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 12:28:45) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;35;1mEntry Load (0.000841)[0m   [0mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+  [4;36;1mEntry Columns (0.001188)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+Completed in 0.01669 (59 reqs/sec) | Rendering: 0.00412 (24%) | DB: 0.00203 (12%) | 200 OK [http://0.0.0.0/entries]
+
+
+Processing EntriesController#destroy (for 127.0.0.1 at 2008-05-09 12:28:48) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"authenticity_token"=>"64ca269e0407fa0b61ac563e8ad32ad632b7d394", "_method"=>"delete", "action"=>"destroy", "id"=>"3", "controller"=>"entries"}
+  [4;35;1mEntry Columns (0.000826)[0m   [0mSHOW FIELDS FROM `entries`[0m
+  [4;36;1mEntry Load (0.000306)[0m   [0;1mSELECT * FROM `entries` WHERE (`entries`.`id` = 3) [0m
+  [4;35;1mSQL (0.000094)[0m   [0mBEGIN[0m
+  [4;36;1mEntry Destroy (0.000329)[0m   [0;1m DELETE FROM `entries`
+ WHERE `id` = 3
+[0m
+  [4;35;1mSQL (0.001041)[0m   [0mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/entries
+Completed in 0.01436 (69 reqs/sec) | DB: 0.00260 (18%) | 302 Found [http://0.0.0.0/entries/3]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 12:28:48) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;36;1mEntry Load (0.000286)[0m   [0;1mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+  [4;35;1mEntry Columns (0.000630)[0m   [0mSHOW FIELDS FROM `entries`[0m
+Completed in 0.01242 (80 reqs/sec) | Rendering: 0.00309 (24%) | DB: 0.00092 (7%) | 200 OK [http://0.0.0.0/entries]
+
+
+Processing EntriesController#destroy (for 127.0.0.1 at 2008-05-09 12:28:49) [DELETE]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"authenticity_token"=>"64ca269e0407fa0b61ac563e8ad32ad632b7d394", "_method"=>"delete", "action"=>"destroy", "id"=>"2", "controller"=>"entries"}
+  [4;36;1mEntry Columns (0.001768)[0m   [0;1mSHOW FIELDS FROM `entries`[0m
+  [4;35;1mEntry Load (0.000481)[0m   [0mSELECT * FROM `entries` WHERE (`entries`.`id` = 2) [0m
+  [4;36;1mSQL (0.000122)[0m   [0;1mBEGIN[0m
+  [4;35;1mEntry Destroy (0.000362)[0m   [0m DELETE FROM `entries`
+ WHERE `id` = 2
+[0m
+  [4;36;1mSQL (0.006270)[0m   [0;1mCOMMIT[0m
+Redirected to http://0.0.0.0:3000/entries
+Completed in 0.03024 (33 reqs/sec) | DB: 0.00900 (29%) | 302 Found [http://0.0.0.0/entries/2]
+
+
+Processing EntriesController#index (for 127.0.0.1 at 2008-05-09 12:28:49) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTIxOWI5YjY2Mzc5YTczZWUyZDY2NmUzNDY4ZWIw%0AMmQiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--fca42b564dcaf10df289b8169345a0c51697ce51
+  Parameters: {"action"=>"index", "controller"=>"entries"}
+  [4;35;1mEntry Load (0.000288)[0m   [0mSELECT * FROM `entries` [0m
+Rendering template within layouts/entries
+Rendering entries/index
+Completed in 0.01333 (75 reqs/sec) | Rendering: 0.00163 (12%) | DB: 0.00029 (2%) | 200 OK [http://0.0.0.0/entries]
